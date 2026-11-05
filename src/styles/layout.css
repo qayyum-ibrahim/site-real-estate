@@ -1,5 +1,13 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 main {
   display: block;
+  flex: 1 0 auto;
   min-height: 60vh;
 }
 

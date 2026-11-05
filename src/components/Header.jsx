@@ -9,11 +9,14 @@ export default function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { pathname } = useLocation()
+  const [menuPath, setMenuPath] = useState(pathname)
   const toggleRef = useRef(null)
 
-  useEffect(() => {
+  // Close the menu on route change.
+  if (menuPath !== pathname) {
+    setMenuPath(pathname)
     setOpen(false)
-  }, [pathname])
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)

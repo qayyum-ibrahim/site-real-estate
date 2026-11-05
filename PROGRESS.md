@@ -4,8 +4,8 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 
 ## Current status
 - Site: Haven Estates (Real Estate Website)
-- Last completed phase: Phase 4
-- Next phase: Phase 5
+- Last completed phase: Phase 5
+- Next phase: none. Site complete.
 - Live URL: (owner fills in after the first Vercel deploy)
 
 ## Phase checklist
@@ -13,7 +13,9 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 - [x] Phase 2: Home page
 - [x] Phase 3: Main feature pages
 - [x] Phase 4: Remaining pages
-- [ ] Phase 5: Polish and hand-off
+- [x] Phase 5: Polish and hand-off
+
+**Site complete**
 
 ## Decisions
 (Write each choice you made without asking. One line each, with the phase number.)
@@ -37,12 +39,18 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 - P4: Contact form fields: name, email, optional phone, optional nearest office, topic (required), message, consent checkbox. Front-end only, success note says nothing was sent.
 - P4: Agent cards moved to a shared `AgentList` component (used on Home and About). Inner pages share `.page-head` in `styles/layout.css`.
 - P4: 404 page ("This page has moved out") on the `*` route, copy in `src/data/contact.js`.
+- P5: PageTitle now resets the meta and OG description to the default from `index.html` when a route gives none.
+- P5: Header closes the mobile menu on route change during render (no setState in effect). Footer year is a module constant. Lint is clean.
+- P5: Hero fallback hides its house icon (it showed behind the search card). `#root` is a flex column so the footer sits at the bottom of short pages.
+- P5: README.md written (run, photos, content files).
 
 ## Blockers
 (Write anything that stopped you. Say exactly what the owner must do.)
 
 ## Notes for next session
 (Short. Only what the next session needs to know.)
+- Owner: run `/site-done real-estate <live url>` in the projects folder.
+- P5 check: every route screenshotted at 768, 1280 and 1920 with no photos; no console errors; all routes return 200 on `npm run preview`.
 - Shared components in `src/components/`: Header, Footer, Logo, Button (`to`/`href`/button; variants primary, dark, outline, light; size sm), Img (`src`, `alt`, `ratio`, `eager`), Section (`tone` default/surface/dark, eyebrow, title, intro, action), PageTitle (`title`, `description`).
 - Placeholder component removed. Every route now has real content.
 - Shared form styles in `src/styles/forms.css` (`.field`, `.input`, `.select`, `.textarea`, `.field--error`, `.field__error`). Reuse them and copy the validation pattern from `components/EnquiryForm.jsx` for the Contact form.
