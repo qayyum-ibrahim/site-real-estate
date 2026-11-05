@@ -43,6 +43,7 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 - P5: Header closes the mobile menu on route change during render (no setState in effect). Footer year is a module constant. Lint is clean.
 - P5: Hero fallback hides its house icon (it showed behind the search card). `#root` is a flex column so the footer sits at the bottom of short pages.
 - P5: README.md written (run, photos, content files).
+- Fix: mobile menu collapsed because `backdrop-filter` on `.header` made it the containing block for the fixed menu. Blur moved to `.header::before`.
 
 ## Blockers
 (Write anything that stopped you. Say exactly what the owner must do.)
