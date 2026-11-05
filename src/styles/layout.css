@@ -1,0 +1,12 @@
+main {
+  display: block;
+  min-height: 60vh;
+}
+
+.placeholder {
+  padding-block: var(--space-section);
+}
+
+.placeholder h1 {
+  margin-top: var(--space-3);
+}

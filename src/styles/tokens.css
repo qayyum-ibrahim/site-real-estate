@@ -1,0 +1,63 @@
+:root {
+  /* Brand colors */
+  --color-bg: #ffffff;
+  --color-surface: #f4f6f5;
+  --color-text: #1b1f23;
+  --color-muted: #5d6870;
+  --color-accent: #2f8f6b;
+  --color-accent-hover: #267a5b;
+  --color-accent-soft: #e3f1eb;
+  --color-dark: #12201b;
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #a9b8b1;
+  --color-border: #e1e6e3;
+  --color-border-strong: #c9d1cd;
+  --color-error: #b3261e;
+  --color-focus: #2f8f6b;
+
+  /* Fonts */
+  --font-heading: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Type scale (fluid) */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-xl: clamp(1.625rem, 1.3rem + 1.3vw, 2.25rem);
+  --text-2xl: clamp(2rem, 1.5rem + 2.2vw, 3.25rem);
+  --text-3xl: clamp(2.5rem, 1.7rem + 3.6vw, 4.75rem);
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-section: clamp(4rem, 3rem + 4vw, 7.5rem);
+
+  /* Layout */
+  --container: 1240px;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --header-h: 72px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(18, 32, 27, 0.06);
+  --shadow: 0 4px 16px -4px rgba(18, 32, 27, 0.1), 0 2px 4px rgba(18, 32, 27, 0.04);
+  --shadow-lg: 0 24px 48px -16px rgba(18, 32, 27, 0.22);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 220ms;
+}
