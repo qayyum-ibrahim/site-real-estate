@@ -8,6 +8,7 @@ import '@fontsource/manrope/600.css'
 import '@fontsource/manrope/700.css'
 import './styles/tokens.css'
 import './styles/base.css'
+import './styles/forms.css'
 import './styles/layout.css'
 import App from './App.jsx'
 

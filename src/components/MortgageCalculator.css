@@ -1,0 +1,134 @@
+.mcalc {
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.mcalc h2 {
+  margin-top: var(--space-3);
+  font-size: var(--text-xl);
+}
+
+.mcalc__intro {
+  margin-top: var(--space-3);
+  color: var(--color-muted);
+}
+
+.mcalc__grid {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.mcalc__form {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.mcalc__label-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.mcalc__label-row label {
+  font-weight: 700;
+}
+
+.mcalc__label-row output {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.mcalc__result {
+  padding: var(--space-5);
+  border-radius: var(--radius);
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+}
+
+.mcalc__result-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-on-dark-muted);
+}
+
+.mcalc__monthly {
+  margin-top: var(--space-2);
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.mcalc__bar {
+  display: flex;
+  gap: 3px;
+  height: 10px;
+  margin-top: var(--space-5);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.mcalc__bar span {
+  flex-basis: 0;
+  min-width: 4px;
+  transition: flex-grow 400ms var(--ease);
+}
+
+.mcalc__bar-deposit { background: #8fd3b6; }
+.mcalc__bar-loan { background: var(--color-accent); }
+.mcalc__bar-interest { background: rgba(255, 255, 255, 0.35); }
+
+.mcalc__list {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.mcalc__list div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.mcalc__list dt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-on-dark-muted);
+}
+
+.mcalc__list dd {
+  margin: 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.mcalc__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mcalc__total {
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.mcalc__total dt {
+  color: var(--color-on-dark);
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .mcalc__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}

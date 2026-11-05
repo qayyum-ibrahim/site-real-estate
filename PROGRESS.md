@@ -4,14 +4,14 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 
 ## Current status
 - Site: Haven Estates (Real Estate Website)
-- Last completed phase: Phase 2
-- Next phase: Phase 3
+- Last completed phase: Phase 3
+- Next phase: Phase 4
 - Live URL: (owner fills in after the first Vercel deploy)
 
 ## Phase checklist
 - [x] Phase 1: Scaffold, deploy and design system
 - [x] Phase 2: Home page
-- [ ] Phase 3: Main feature pages
+- [x] Phase 3: Main feature pages
 - [ ] Phase 4: Remaining pages
 - [ ] Phase 5: Polish and hand-off
 
@@ -27,6 +27,11 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 - P2: Agents: Adaeze Okafor (agent-1), Tunde Bakare (agent-2), Hauwa Musa (agent-3), phones +234 800 000 0001 to 0003, `@havenestates.example`.
 - P2: Featured on Home = properties with `featured: true` (6). Popular areas reuse the matching property photo as their tile image.
 - P2: Hero copy points ("Every listing visited in person", "No viewing fees", "Agents in both cities") and Why Haven copy are fictional, in `src/data/home.js`.
+- P3: Listings filters live in the URL (`mode`, `location`, `type`, `min`, `max`, `beds`, `saved`, `sort`) so searches can be shared. Price steps change with buy/rent (`src/data/listings.js`). Bedrooms filter is "N+ beds". Added a "Location" filter so Home search/area links work.
+- P3: Favourites stored under localStorage key `haven:favourites`, shared via `useSyncExternalStore` (`src/hooks/useFavourites.js`). "Saved" toggle on Listings shows only saved homes.
+- P3: Only one photo per property exists, so the detail gallery shows 3 views of it: full shot plus two zoomed crops (`galleryViews` in `src/data/detail.js`).
+- P3: Mortgage calculator shows only on "for sale" listings. Defaults: 30% deposit, 20 years, 18% rate (fictional guide).
+- P3: Enquiry form (name, email, optional phone, prefilled message) validates on the front end and shows a success note that says nothing was sent.
 
 ## Blockers
 (Write anything that stopped you. Say exactly what the owner must do.)
@@ -34,7 +39,9 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 ## Notes for next session
 (Short. Only what the next session needs to know.)
 - Shared components in `src/components/`: Header, Footer, Logo, Button (`to`/`href`/button; variants primary, dark, outline, light; size sm), Img (`src`, `alt`, `ratio`, `eager`), Section (`tone` default/surface/dark, eyebrow, title, intro, action), PageTitle (`title`, `description`).
-- Pages are placeholders using `components/Placeholder.jsx`; delete it once every page is built.
+- About and Contact still use `components/Placeholder.jsx`; delete it in Phase 4 once they are built.
+- Shared form styles in `src/styles/forms.css` (`.field`, `.input`, `.select`, `.textarea`, `.field--error`, `.field__error`). Reuse them and copy the validation pattern from `components/EnquiryForm.jsx` for the Contact form.
+- Headless Chrome screenshots below ~500px wide are cropped by Chrome itself, not by the layout.
 - Nav and contact data live in `src/data/site.js`.
 - Hero search and area tiles link to `/properties?mode=buy|rent&location=<city or area>&type=<type>`. Phase 3 Listings must read these query params (location matches `city` or `area`).
 - New shared pieces: `PropertyCard` (no favourite button yet, add it in Phase 3), `Icon` (inline SVG set), `Reveal` (scroll fade-in), `utils/format.js` (formatNaira, formatPrice, formatBeds, telHref). `Img` accepts `ratio={null}` to fill a positioned parent.

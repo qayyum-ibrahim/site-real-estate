@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Img from './Img.jsx'
 import Icon from './Icon.jsx'
+import FavouriteButton from './FavouriteButton.jsx'
 import { formatBeds, formatNaira } from '../utils/format.js'
 import './PropertyCard.css'
 
@@ -10,6 +11,7 @@ export default function PropertyCard({ property: p }) {
       <div className="pcard__media">
         <Img src={p.image} alt={`${p.title} in ${p.area}, ${p.city}`} ratio="4 / 3" />
         <span className={`pcard__badge pcard__badge--${p.mode}`}>{p.mode === 'buy' ? 'For sale' : 'For rent'}</span>
+        <FavouriteButton id={p.id} title={p.title} className="pcard__fav" />
       </div>
       <div className="pcard__body">
         <p className="pcard__price">

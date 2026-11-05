@@ -126,3 +126,11 @@
 .pcard__facts svg {
   color: var(--color-accent);
 }
+
+/* Sits above the full-card link overlay. */
+.pcard__fav {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 2;
+}
