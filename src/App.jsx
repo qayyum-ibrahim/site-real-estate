@@ -7,6 +7,7 @@ import Listings from './pages/Listings.jsx'
 import PropertyDetail from './pages/PropertyDetail.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/properties/:id" element={<PropertyDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

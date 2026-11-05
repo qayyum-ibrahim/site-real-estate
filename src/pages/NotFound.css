@@ -1,0 +1,48 @@
+.not-found {
+  padding-block: var(--space-section);
+  background:
+    radial-gradient(80% 60% at 50% 0%, var(--color-accent-soft), transparent 70%),
+    var(--color-bg);
+}
+
+.not-found__inner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.not-found__art {
+  width: min(220px, 60vw);
+  height: auto;
+  margin-bottom: var(--space-6);
+  fill: none;
+  stroke: var(--color-dark);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.not-found__key {
+  stroke: var(--color-accent);
+}
+
+.not-found h1 {
+  margin-top: var(--space-3);
+  font-size: var(--text-2xl);
+  max-width: 18ch;
+}
+
+.not-found p {
+  margin-top: var(--space-4);
+  max-width: 48ch;
+  font-size: var(--text-md);
+  color: var(--color-muted);
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}

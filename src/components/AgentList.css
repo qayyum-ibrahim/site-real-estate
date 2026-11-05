@@ -1,0 +1,72 @@
+/* Agents */
+.agents {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.agent {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.agent__photo {
+  border-radius: var(--radius);
+}
+
+.agent__body h3 {
+  font-size: 1.375rem;
+}
+
+.agent__role {
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.agent__contact {
+  display: grid;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.agent__contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 28px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color var(--dur) var(--ease);
+}
+
+.agent__contact a:hover {
+  color: var(--color-accent);
+}
+
+.agent__contact svg {
+  flex: none;
+  color: var(--color-accent);
+}
+
+@media (min-width: 768px) {
+  .agents {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .agent {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding: var(--space-4) var(--space-4) var(--space-5);
+  }
+
+  .agent__body {
+    padding-inline: var(--space-2);
+  }
+}

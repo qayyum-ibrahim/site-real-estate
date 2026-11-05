@@ -7,10 +7,9 @@ import Img from '../components/Img.jsx'
 import Icon from '../components/Icon.jsx'
 import Reveal from '../components/Reveal.jsx'
 import PropertyCard from '../components/PropertyCard.jsx'
+import AgentList from '../components/AgentList.jsx'
 import { properties, propertyTypes } from '../data/properties.js'
-import { agents } from '../data/agents.js'
 import { agentStrip, areas, featured, hero, locations, why } from '../data/home.js'
-import { telHref } from '../utils/format.js'
 import './Home.css'
 
 function HeroSearch() {
@@ -180,31 +179,7 @@ export default function Home() {
         intro={agentStrip.intro}
         action={<Button to="/contact">Book a viewing</Button>}
       >
-        <ul role="list" className="agents">
-          {agents.map((a, i) => (
-            <Reveal as="li" key={a.id} delay={i * 80} className="agent">
-              <Img src={a.image} alt={`Portrait of ${a.name}`} ratio="1 / 1" className="agent__photo" />
-              <div className="agent__body">
-                <h3>{a.name}</h3>
-                <p className="agent__role">{a.role}</p>
-                <ul role="list" className="agent__contact">
-                  <li>
-                    <a href={telHref(a.phone)}>
-                      <Icon name="phone" size={16} />
-                      {a.phone}
-                    </a>
-                  </li>
-                  <li>
-                    <a href={`mailto:${a.email}`}>
-                      <Icon name="mail" size={16} />
-                      {a.email}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </Reveal>
-          ))}
-        </ul>
+        <AgentList />
       </Section>
     </>
   )

@@ -1,0 +1,226 @@
+/* Hero */
+.about-hero {
+  padding-top: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-hero__grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.about-hero h1 {
+  margin-top: var(--space-3);
+  font-size: var(--text-2xl);
+  max-width: 16ch;
+}
+
+.about-hero__intro {
+  margin-top: var(--space-4);
+  max-width: 52ch;
+  font-size: var(--text-md);
+  color: var(--color-muted);
+}
+
+.about-hero__media {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: var(--space-7);
+  border-top: 1px solid var(--color-border-strong);
+}
+
+.stats__item {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-1);
+  padding: var(--space-5) var(--space-4) var(--space-6) 0;
+}
+
+.stats__item:nth-child(even) {
+  padding-left: var(--space-4);
+  border-left: 1px solid var(--color-border);
+}
+
+.stats dt {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.stats dd {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  line-height: 1.1;
+  color: var(--color-dark);
+}
+
+/* Story */
+.story__grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.story__media {
+  border-radius: var(--radius-lg);
+}
+
+.story__copy h2 {
+  margin-top: var(--space-3);
+  max-width: 16ch;
+}
+
+.story__copy p {
+  margin-top: var(--space-4);
+  max-width: 58ch;
+  font-size: var(--text-md);
+  color: var(--color-muted);
+}
+
+/* Values */
+.values {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.values__item {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.values__item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.values__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.values__item h3 {
+  margin-top: var(--space-5);
+  font-size: 1.375rem;
+}
+
+.values__item p {
+  margin-top: var(--space-3);
+  color: var(--color-muted);
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.steps__item {
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.steps__num {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-accent);
+}
+
+.steps__item h3 {
+  margin-top: var(--space-3);
+  font-size: 1.375rem;
+}
+
+.steps__item p {
+  margin-top: var(--space-2);
+  color: var(--color-on-dark-muted);
+}
+
+/* Closing call to action */
+.about-cta {
+  padding-bottom: var(--space-section);
+}
+
+.about-cta__box {
+  display: grid;
+  gap: var(--space-5);
+  padding: clamp(2rem, 1.5rem + 3vw, 4rem);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(47, 143, 107, 0.35), transparent 60%),
+    var(--color-dark);
+  color: var(--color-on-dark);
+}
+
+.about-cta__box h2 {
+  color: var(--color-on-dark);
+  font-size: var(--text-xl);
+}
+
+.about-cta__box p {
+  margin-top: var(--space-3);
+  max-width: 48ch;
+  color: var(--color-on-dark-muted);
+}
+
+.about-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stats__item:not(:first-child) {
+    padding-left: var(--space-5);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-6);
+  }
+}
+
+@media (min-width: 900px) {
+  .about-hero__grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .story__grid {
+    grid-template-columns: 5fr 6fr;
+    gap: var(--space-8);
+  }
+
+  .values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .about-cta__box {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}

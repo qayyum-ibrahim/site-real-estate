@@ -4,15 +4,15 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 
 ## Current status
 - Site: Haven Estates (Real Estate Website)
-- Last completed phase: Phase 3
-- Next phase: Phase 4
+- Last completed phase: Phase 4
+- Next phase: Phase 5
 - Live URL: (owner fills in after the first Vercel deploy)
 
 ## Phase checklist
 - [x] Phase 1: Scaffold, deploy and design system
 - [x] Phase 2: Home page
 - [x] Phase 3: Main feature pages
-- [ ] Phase 4: Remaining pages
+- [x] Phase 4: Remaining pages
 - [ ] Phase 5: Polish and hand-off
 
 ## Decisions
@@ -32,6 +32,11 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 - P3: Only one photo per property exists, so the detail gallery shows 3 views of it: full shot plus two zoomed crops (`galleryViews` in `src/data/detail.js`).
 - P3: Mortgage calculator shows only on "for sale" listings. Defaults: 30% deposit, 20 years, 18% rate (fictional guide).
 - P3: Enquiry form (name, email, optional phone, prefilled message) validates on the front end and shows a success note that says nothing was sent.
+- P4: About copy is fictional (`src/data/about.js`): founded 2014 in Lekki, 1,200+ homes sold and let, 2 offices, 4.8/5 rating, story, three values, four "how it works" steps. Uses property-3.jpg and property-9.jpg as its photos.
+- P4: Contact (`src/data/contact.js`): office phones reuse agent numbers (Lagos 0001, Abuja 0003), office emails lagos@/abuja@havenestates.example, fictional opening hours, three FAQs. Office cards use a drawn map pattern, not a real map.
+- P4: Contact form fields: name, email, optional phone, optional nearest office, topic (required), message, consent checkbox. Front-end only, success note says nothing was sent.
+- P4: Agent cards moved to a shared `AgentList` component (used on Home and About). Inner pages share `.page-head` in `styles/layout.css`.
+- P4: 404 page ("This page has moved out") on the `*` route, copy in `src/data/contact.js`.
 
 ## Blockers
 (Write anything that stopped you. Say exactly what the owner must do.)
@@ -39,7 +44,7 @@ Claude Code: read this at the start of every session. Update it at the end of ev
 ## Notes for next session
 (Short. Only what the next session needs to know.)
 - Shared components in `src/components/`: Header, Footer, Logo, Button (`to`/`href`/button; variants primary, dark, outline, light; size sm), Img (`src`, `alt`, `ratio`, `eager`), Section (`tone` default/surface/dark, eyebrow, title, intro, action), PageTitle (`title`, `description`).
-- About and Contact still use `components/Placeholder.jsx`; delete it in Phase 4 once they are built.
+- Placeholder component removed. Every route now has real content.
 - Shared form styles in `src/styles/forms.css` (`.field`, `.input`, `.select`, `.textarea`, `.field--error`, `.field__error`). Reuse them and copy the validation pattern from `components/EnquiryForm.jsx` for the Contact form.
 - Headless Chrome screenshots below ~500px wide are cropped by Chrome itself, not by the layout.
 - Nav and contact data live in `src/data/site.js`.

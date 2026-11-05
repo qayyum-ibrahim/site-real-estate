@@ -3,10 +3,22 @@ main {
   min-height: 60vh;
 }
 
-.placeholder {
-  padding-block: var(--space-section);
+/* Shared top band for inner pages (About, Contact, 404). */
+.page-head {
+  padding-block: clamp(2.5rem, 1.5rem + 4vw, 5rem) clamp(2rem, 1.5rem + 2vw, 3rem);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.placeholder h1 {
+.page-head h1 {
   margin-top: var(--space-3);
+  font-size: var(--text-2xl);
+  max-width: 20ch;
+}
+
+.page-head__intro {
+  margin-top: var(--space-4);
+  max-width: 56ch;
+  font-size: var(--text-md);
+  color: var(--color-muted);
 }
